@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="MAIN" Id="{a16db61f-33d9-4e15-aec8-66b56be237dc}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	arrInputs		AT %I* : ARRAY[0..7] OF BOOL;
+	arrOutputs		AT %Q* : ARRAY[0..7] OF BOOL;
+	
+	manualMap		AT %I* : INT;
+	
+	axisRef			: AXIS_REF;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
