@@ -5,7 +5,7 @@ This repository illustrates the use of TwinCAT's "standalone system manager" ass
 * Variant selection
 * I/O configuration (add, remove, disable)
 * Linking
-* runtime activation
+* Runtime activation
 
 Requirements (Dev):
 
@@ -20,7 +20,10 @@ Requirements (Runtime):
 * TwinCAT project file (\*.tsproj)
   * \*Plus all referenced files (e.g. PLC TMC)
 
-The TwinCAT project's I/O config also contains a third-party Baumuller EtherCAT drive. To run as-is, you may need to load their [EtherCAT XML definitions](https://www.baumueller.com/en/download/b-maxx-6000-5000-3300-3200-2500-ethercat-xml-all), or just replace that drive with another Beckhoff drive and configure the variance appropriately.
+The TwinCAT project's I/O config also contains a third-party Baumuller EtherCAT drive. To run as-is, you may need to load their [EtherCAT XML definitions](https://www.baumueller.com/en/download/b-maxx-6000-5000-3300-3200-2500-ethercat-xml-all). Alternatively, you can just replace that drive with another type and configure the variance appropriately: 
+* Select new drive in IO config
+* Set 'Disable' and 'Mapping' to True under the 'Project Variants' property group
+* Link the new drive from the NC Axis config for the 'output' variant
 
 For more information (examples, compatibility, etc.) check the included [pdf](/TwinCAT_Standalone_System_Manager_V2.pdf).
 
