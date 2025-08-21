@@ -7,7 +7,12 @@ const string path = @"C:\temp\SysManAutomation\";
 
 if (stSysManager != null)
 {
+    // open base project
     stSysManager.OpenConfiguration(path + "SysManAutomation.tsproj");
+
+    // save as, hook into new proj (as not to modify original)
+    stSysManager.SaveConfiguration(path + "_modified.tsproj");
+    stSysManager.OpenConfiguration(path + "_modified.tsproj");
 
     // disable existing analog terminal / unlink from PLC
     stSysManager.UnlinkVariables("TIPC^PLC1^PLC1 Instance^PlcTask Inputs^MAIN.manualMap",
@@ -20,10 +25,6 @@ if (stSysManager != null)
     ecMaster.CreateChild("Term 5 (EL3004)", 9099, "Term 4 (EK1110)", "EL3004");
     stSysManager.LinkVariables("TIPC^PLC1^PLC1 Instance^PlcTask Inputs^MAIN.manualMap",
         "TIID^Device 1 (EtherCAT)^Term 1 (EK1100)^Term 5 (EL3004)^AI Standard Channel 1^Value");
-
-    // save as, open modified
-    stSysManager.SaveConfiguration(path + "_modified.tsproj");
-    stSysManager.OpenConfiguration(path + "_modified.tsproj");
 
     Console.WriteLine("Select variant (1 or 2):");
     var key = Console.ReadKey();
