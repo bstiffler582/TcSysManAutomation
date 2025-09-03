@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.17" TcProjectVariant="inputs">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.18" TcProjectVariant="inputs">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-000000000035}" TcBaseType="true" HideType="true">UINTARR2</Name>
@@ -1472,7 +1472,7 @@ External Setpoint Generation:
 		</System>
 		<Motion>
 			<NC>
-				<SafTask Priority="4" CycleTime="20000" AmsPort="501" IoAtBegin="true" SafTaskInfo="256" HighPrioAds="true">
+				<SafTask Disabled="true" Priority="4" CycleTime="20000" AmsPort="501" IoAtBegin="true" SafTaskInfo="256" HighPrioAds="true">
 					<Name>NC-Task 1 SAF</Name>
 					<ProjectVariant PvUseParameter="true">
 						<Variant>
@@ -1525,7 +1525,7 @@ External Setpoint Generation:
 								<Parameters>
 									<Parameter Igrp="#x5001" Ioffs="#x15" Value="4294967295"/>
 									<Parameter Igrp="#x5001" Ioffs="#x107" Value="0"/>
-									<Parameter Igrp="#x7001" Ioffs="#x10" Value="256"/>
+									<Parameter Igrp="#x7001" Ioffs="#x10" Value="196864"/>
 									<Parameter Igrp="#x7001" Ioffs="#x105" Value="6.0"/>
 									<Parameter Igrp="#x7001" Ioffs="#x109" Value="1.0"/>
 									<Parameter Igrp="#x7001" Ioffs="#x10a" Value="0.0"/>
@@ -1635,7 +1635,7 @@ External Setpoint Generation:
 						</Vars>
 					</Encoder>
 					<Drive Name="Drive" DrvType="9">
-						<DrvPara MaxCount="#xffffffff" DriveControlDWord="#x00000100">
+						<DrvPara MaxCount="#xffffffff" DriveControlDWord="#x00030100">
 							<Analog VeloScale="6" TorqueSetpointScale="10" ScaleFactorActTorque="0.1"/>
 							<TimeComp TaskDelayCycles="1"/>
 						</DrvPara>
@@ -1717,11 +1717,14 @@ External Setpoint Generation:
 				<ProjectVariant PvUseDefine="true">
 					<Variant>
 						<Name>inputs</Name>
+						<Defines></Defines>
+					</Variant>
+					<Variant>
 						<Name>outputs</Name>
 						<Defines/>
 					</Variant>
 				</ProjectVariant>
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{AE4B277D-F6AE-73BF-68BF-42C8D00B1B49}" TmcPath="PLC1\PLC1.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{A53E5377-BD56-7BE4-7D86-F46503B07DB7}" TmcPath="PLC1\PLC1.tmc">
 					<Name>PLC1 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" AreaNo="1">
@@ -1792,22 +1795,6 @@ External Setpoint Generation:
 								<Name>inputs</Name>
 								<Disable>false</Disable>
 								<PortABoxInfo>#x01000001</PortABoxInfo>
-								<IoMapping>
-									<Links>
-										<OwnerA Name="__THIS__">
-											<OwnerB Name="TIPC^PLC1^PLC1 Instance">
-												<Link VarA="Channel 1^Input" VarB="PlcTask Inputs^MAIN.arrInputs[0]" AutoLink="true" PeerAutoLink="true"/>
-												<Link VarA="Channel 2^Input" VarB="PlcTask Inputs^MAIN.arrInputs[1]" AutoLink="true" PeerAutoLink="true"/>
-												<Link VarA="Channel 3^Input" VarB="PlcTask Inputs^MAIN.arrInputs[2]" AutoLink="true" PeerAutoLink="true"/>
-												<Link VarA="Channel 4^Input" VarB="PlcTask Inputs^MAIN.arrInputs[3]" AutoLink="true" PeerAutoLink="true"/>
-												<Link VarA="Channel 5^Input" VarB="PlcTask Inputs^MAIN.arrInputs[4]" AutoLink="true" PeerAutoLink="true"/>
-												<Link VarA="Channel 6^Input" VarB="PlcTask Inputs^MAIN.arrInputs[5]" AutoLink="true" PeerAutoLink="true"/>
-												<Link VarA="Channel 7^Input" VarB="PlcTask Inputs^MAIN.arrInputs[6]" AutoLink="true" PeerAutoLink="true"/>
-												<Link VarA="Channel 8^Input" VarB="PlcTask Inputs^MAIN.arrInputs[7]" AutoLink="true" PeerAutoLink="true"/>
-											</OwnerB>
-										</OwnerA>
-									</Links>
-								</IoMapping>
 							</Variant>
 							<Variant>
 								<Name>outputs</Name>
@@ -2067,7 +2054,7 @@ Bit1: Value bigger/equal Limit2]]></Comment>
 							<PortABoxInfo>#x01000006</PortABoxInfo>
 						</Variant>
 					</ProjectVariant>
-					<EtherCAT SlaveType="2" PdiType="#x0c08" MboxDataLinkLayer="true" StateMBoxPolling="true" CfgModeSafeOp="true" DownloadPdoCfg="true" CycleMBoxPollingTime="0" FoeType="1" SoeChannels="1" VendorId="#x00000002" ProductCode="#x13ed6012" RevisionNo="#x00d70000" InfoDataAddr="true" InfoDataSoeDS401="true" InfoDataDcTimes="true" TimeoutStateChange2="15000" TimeoutStateChange3="10000" TimeoutStateChange4="500" AutoRestoreAfterWcOk="true" CheckRevisionNoType="4" PortPhys="12305" IdentificationAdo="308" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="AX5101-0000-0215 EtherCAT Drive (SoE, 1 Ch.)" Desc="AX5101-0000-0215" PortABoxInfo="#x01000006">
+					<EtherCAT SlaveType="2" PdiType="#x0c08" MboxDataLinkLayer="true" StateMBoxPolling="true" CfgModeSafeOp="true" DownloadPdoCfg="true" CycleMBoxPollingTime="0" FoeType="1" SoeChannels="1" VendorId="#x00000002" ProductCode="#x13ed6012" RevisionNo="#x00d70000" InfoDataAddr="true" InfoDataSoeDS401="true" InfoDataDcTimes="true" TimeoutStateChange2="15000" TimeoutStateChange3="10000" TimeoutStateChange4="500" AutoRestoreAfterWcOk="true" CheckRevisionNoType="4" PortPhys="12305" IdentificationAdo="308" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="AX5101-0000-0215 EtherCAT Drive (SoE, 1 Ch.)" Desc="AX5101-0000-0215" PortABoxInfo="#x01000004">
 						<SyncMan>001880002600010001000000800080008000001826010000</SyncMan>
 						<SyncMan>001a80002200010002000000800080008000001a22010000</SyncMan>
 						<SyncMan>001006002400010003000000000000000000001024010000</SyncMan>
@@ -2085,7 +2072,7 @@ Bit1: Value bigger/equal Limit2]]></Comment>
 						<DcMode>446353796e633132350000000000000053796e63206379636c652074696d653a20313235c2b57300000000000000000048e801000000000000000000ffff30070000000000000000000000000000000000000000000000000000000000000000</DcMode>
 						<DcMode>446353796e6336322e3500000000000053796e63206379636c652074696d653a2036322e35c2b573000000000000000024f400000000000000000000ffff30070000000000000000000000000000000000000000000000000000000000000000</DcMode>
 						<MBoxUserCmdData>00400500100000000d000000030000000000000000000000000000000000000003400a8000000000fe7ff907000000004665617475726520666c61677300</MBoxUserCmdData>
-						<MBoxUserCmdData>020005000a00000015000000030000000000000000000000000000000000000003400100000000001027546e637963202d204e43206379636c652074696d6500</MBoxUserCmdData>
+						<MBoxUserCmdData>020005000a0000001500000003000000000000000000000000000000000000000340010000000000d007546e637963202d204e43206379636c652074696d6500</MBoxUserCmdData>
 						<MBoxUserCmdData>020005000a000000170000000300000000000000000000000000000000000000034002000000000010275473637963202d20436f6d6d206379636c652074696d6500</MBoxUserCmdData>
 						<MBoxUserCmdData>020005000a0000000e000000030000000000000000000000000000000000000003402000000000000b004f7065726174696f6e206d6f646500</MBoxUserCmdData>
 						<Pdo Name="AT" Index="#x0010" Flags="#x0001" SyncMan="3">
@@ -2123,18 +2110,6 @@ Bit1: Value bigger/equal Limit2]]></Comment>
 	</Project>
 	<Mappings>
 		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
-		<OwnerA Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1100)^Term 2 (EL1008)">
-			<OwnerB Name="TIPC^PLC1^PLC1 Instance">
-				<Link VarA="Channel 1^Input" VarB="PlcTask Inputs^MAIN.arrInputs[0]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="Channel 2^Input" VarB="PlcTask Inputs^MAIN.arrInputs[1]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="Channel 3^Input" VarB="PlcTask Inputs^MAIN.arrInputs[2]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="Channel 4^Input" VarB="PlcTask Inputs^MAIN.arrInputs[3]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="Channel 5^Input" VarB="PlcTask Inputs^MAIN.arrInputs[4]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="Channel 6^Input" VarB="PlcTask Inputs^MAIN.arrInputs[5]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="Channel 7^Input" VarB="PlcTask Inputs^MAIN.arrInputs[6]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="Channel 8^Input" VarB="PlcTask Inputs^MAIN.arrInputs[7]" AutoLink="true" PeerAutoLink="true"/>
-			</OwnerB>
-		</OwnerA>
 		<OwnerA Name="TINC^NC-Task 1 SAF^Axes^Axis 1">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Drive 5 (AX5101-0000-0215)">
 				<Link VarA="Drive^Inputs^In^nDataIn1" VarB="AT^Following distance"/>

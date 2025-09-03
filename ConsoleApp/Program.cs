@@ -10,10 +10,6 @@ if (stSysManager != null)
     // open base project
     stSysManager.OpenConfiguration(path + "SysManAutomation.tsproj");
 
-    // save as, hook into new proj (as not to modify original)
-    stSysManager.SaveConfiguration(path + "_modified.tsproj");
-    stSysManager.OpenConfiguration(path + "_modified.tsproj");
-
     // disable existing analog terminal / unlink from PLC
     stSysManager.UnlinkVariables("TIPC^PLC1^PLC1 Instance^PlcTask Inputs^MAIN.manualMap",
         "TIID^Device 1 (EtherCAT)^Term 1 (EK1100)^Term 5 (EL3001)^AI Standard^Value");
@@ -42,6 +38,10 @@ if (stSysManager != null)
     {
         Console.WriteLine("Invlaid input!");
     }
+
+    // save as, hook into new proj
+    stSysManager.SaveConfiguration(path + "_modified.tsproj");
+    stSysManager.OpenConfiguration(path + "_modified.tsproj");
 
     // activate / run
     stSysManager.ActivateConfiguration();
