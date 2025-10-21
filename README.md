@@ -16,11 +16,16 @@ Requirements (Runtime):
 
 * TwinCAT 4026 XAR
 * TcSysManRMLib COM assembly
+
   * Currently Windows only :(
+  * `tcpkg install TwinCAT.XAE.SystemManagerVS`
+
 * TwinCAT project file (\*.tsproj)
+
   * \*Plus all referenced files (e.g. PLC TMC)
 
-The TwinCAT project's I/O config also contains a third-party Baumuller EtherCAT drive. To run as-is, you may need to load their [EtherCAT XML definitions](https://www.baumueller.com/en/download/b-maxx-6000-5000-3300-3200-2500-ethercat-xml-all). Alternatively, you can just replace that drive with another type and configure the variance appropriately: 
+The TwinCAT project's I/O config also contains a third-party Baumuller EtherCAT drive. To run as-is, you may need to load their [EtherCAT XML definitions](https://www.baumueller.com/en/download/b-maxx-6000-5000-3300-3200-2500-ethercat-xml-all). Alternatively, you can just replace that drive with another type and configure the variance appropriately:
+
 * Select new drive in IO config
 * Set 'Disable' and 'Mapping' to True under the 'Project Variants' property group
 * Link the new drive from the NC Axis config for the 'output' variant
