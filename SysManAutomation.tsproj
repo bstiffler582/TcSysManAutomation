@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.18" TcProjectVariant="inputs">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.25" TcProjectVariant="inputs">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-000000000035}" TcBaseType="true" HideType="true">UINTARR2</Name>
@@ -444,7 +444,7 @@ Drive Status 4 (manually linked):
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{875D2B22-B7EB-497E-B933-0C004593CCF3}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">PLCTONC_AXIS_REF_CTRL</Name>
+			<Name GUID="{875D2B22-B7EB-497E-B933-0C004593CCF3}" Namespace="MC" HideType="true" IecDeclaration="DWORD;">PLCTONC_AXIS_REF_CTRL</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
 				<Name>Enable</Name>
@@ -631,7 +631,7 @@ Drive Status 4 (manually linked):
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{CBC83B73-B816-4597-A9E5-2B03263CA131}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_STATE</Name>
+			<Name GUID="{CBC83B73-B816-4597-A9E5-2B03263CA131}" Namespace="MC" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_STATE</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
 				<Name>Operational</Name>
@@ -841,7 +841,7 @@ Drive Status 4 (manually linked):
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{6BDEED54-7268-405F-A18B-665A0AE0FEE9}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_OPMODE</Name>
+			<Name GUID="{6BDEED54-7268-405F-A18B-665A0AE0FEE9}" Namespace="MC" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_OPMODE</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
 				<Name>OpModePosAreaMonitoring</Name>
@@ -959,7 +959,7 @@ Drive Status 4 (manually linked):
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{303D9411-849C-467F-8A4C-5C8CD0F3DD46}" Namespace="MC" TcBaseType="true" HideType="true">NCTOPLC_AXIS_REF_STATE2_FLAGS</Name>
+			<Name GUID="{303D9411-849C-467F-8A4C-5C8CD0F3DD46}" Namespace="MC" HideType="true">NCTOPLC_AXIS_REF_STATE2_FLAGS</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
 				<Name>AvoidingCollision</Name>
@@ -978,7 +978,7 @@ Drive Status 4 (manually linked):
 			</Format>
 		</DataType>
 		<DataType>
-			<Name GUID="{669F3788-48FD-42CF-8A59-2DA946853FB6}" Namespace="MC" TcBaseType="true" HideType="true">NCTOPLC_AXIS_REF_STATE2</Name>
+			<Name GUID="{669F3788-48FD-42CF-8A59-2DA946853FB6}" Namespace="MC" HideType="true">NCTOPLC_AXIS_REF_STATE2</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
 				<Name>Value</Name>
@@ -1003,7 +1003,7 @@ Drive Status 4 (manually linked):
 			</Format>
 		</DataType>
 		<DataType>
-			<Name GUID="{F7B9FC50-054E-4547-B468-83A9E72D8064}" Namespace="MC" TcBaseType="true" HideType="true">NCTOPLC_AXIS_REF_STATE3_FLAGS</Name>
+			<Name GUID="{F7B9FC50-054E-4547-B468-83A9E72D8064}" Namespace="MC" HideType="true">NCTOPLC_AXIS_REF_STATE3_FLAGS</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
 				<Name>TouchProbe1InputState</Name>
@@ -1028,7 +1028,7 @@ Drive Status 4 (manually linked):
 			</Format>
 		</DataType>
 		<DataType>
-			<Name GUID="{60E203BA-3CEE-4BB0-8728-643B1F529592}" Namespace="MC" TcBaseType="true" HideType="true">NCTOPLC_AXIS_REF_STATE3</Name>
+			<Name GUID="{60E203BA-3CEE-4BB0-8728-643B1F529592}" Namespace="MC" HideType="true">NCTOPLC_AXIS_REF_STATE3</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
 				<Name>Value</Name>
@@ -1053,7 +1053,7 @@ Drive Status 4 (manually linked):
 			</Format>
 		</DataType>
 		<DataType>
-			<Name GUID="{BA9D9D0F-1A4A-4A27-A19F-3032626A8491}" Namespace="MC" TcBaseType="true" HideType="true">NCTOPLC_AXIS_REF_CAMCOUPLINGSTATE</Name>
+			<Name GUID="{BA9D9D0F-1A4A-4A27-A19F-3032626A8491}" Namespace="MC" HideType="true">NCTOPLC_AXIS_REF_CAMCOUPLINGSTATE</Name>
 			<BitSize>8</BitSize>
 			<SubItem>
 				<Name>CamActivationPending</Name>
@@ -1717,14 +1717,14 @@ External Setpoint Generation:
 				<ProjectVariant PvUseDefine="true">
 					<Variant>
 						<Name>inputs</Name>
-						<Defines></Defines>
+						<Defines/>
 					</Variant>
 					<Variant>
 						<Name>outputs</Name>
-						<Defines/>
+						<Defines></Defines>
 					</Variant>
 				</ProjectVariant>
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{A53E5377-BD56-7BE4-7D86-F46503B07DB7}" TmcPath="PLC1\PLC1.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{C744AFB7-49E5-5523-7100-7C4EF0966A55}" TmcPath="PLC1\PLC1.tmc">
 					<Name>PLC1 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" AreaNo="1">
@@ -1764,6 +1764,7 @@ External Setpoint Generation:
 							<CycleTime>10000000</CycleTime>
 						</Context>
 					</Contexts>
+					<JsonDynPous><![CDATA[null]]></JsonDynPous>
 					<TaskPouOids>
 						<TaskPouOid Prio="20" OTCID="#x08502001"/>
 					</TaskPouOids>
@@ -1860,22 +1861,6 @@ External Setpoint Generation:
 								<Name>outputs</Name>
 								<Disable>false</Disable>
 								<PortABoxInfo>#x01000002</PortABoxInfo>
-								<IoMapping>
-									<Links>
-										<OwnerA Name="__THIS__">
-											<OwnerB Name="TIPC^PLC1^PLC1 Instance">
-												<Link VarA="Channel 1^Output" VarB="PlcTask Outputs^MAIN.arrOutputs[0]" AutoLink="true" PeerAutoLink="true"/>
-												<Link VarA="Channel 2^Output" VarB="PlcTask Outputs^MAIN.arrOutputs[1]" AutoLink="true" PeerAutoLink="true"/>
-												<Link VarA="Channel 3^Output" VarB="PlcTask Outputs^MAIN.arrOutputs[2]" AutoLink="true" PeerAutoLink="true"/>
-												<Link VarA="Channel 4^Output" VarB="PlcTask Outputs^MAIN.arrOutputs[3]" AutoLink="true" PeerAutoLink="true"/>
-												<Link VarA="Channel 5^Output" VarB="PlcTask Outputs^MAIN.arrOutputs[4]" AutoLink="true" PeerAutoLink="true"/>
-												<Link VarA="Channel 6^Output" VarB="PlcTask Outputs^MAIN.arrOutputs[5]" AutoLink="true" PeerAutoLink="true"/>
-												<Link VarA="Channel 7^Output" VarB="PlcTask Outputs^MAIN.arrOutputs[6]" AutoLink="true" PeerAutoLink="true"/>
-												<Link VarA="Channel 8^Output" VarB="PlcTask Outputs^MAIN.arrOutputs[7]" AutoLink="true" PeerAutoLink="true"/>
-											</OwnerB>
-										</OwnerA>
-									</Links>
-								</IoMapping>
 							</Variant>
 						</ProjectVariant>
 						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x07d83052" RevisionNo="#x00120000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL2008 8Ch. Dig. Output 24V, 0.5A" Desc="EL2008" PortABoxInfo="#x01000002">
@@ -1926,7 +1911,7 @@ External Setpoint Generation:
 					<Box Id="7" BoxType="9099" BoxFlags="#x00000020">
 						<Name>Term 5 (EL3001)</Name>
 						<ImageId>1002</ImageId>
-						<EtherCAT SlaveType="2" PdiType="#x0405" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="7" FoeType="1" VendorId="#x00000002" ProductCode="#x0bb93052" RevisionNo="#x00160000" InfoDataAddr="true" TimeoutMailbox2="2000" CheckRevisionNoType="3" PortPhys="51" SdoUploadWithMaxLength="true" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL3001 1Ch. Ana. Input +/-10V" Desc="EL3001" PortABoxInfo="#x01000002">
+						<EtherCAT SlaveType="2" PdiType="#x0405" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="7" FoeType="1" VendorId="#x00000002" ProductCode="#x0bb93052" RevisionNo="#x00160000" InfoDataAddr="true" TimeoutMailbox2="2000" CheckRevisionNoType="3" PortPhys="51" SdoUploadWithMaxLength="true" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL3001 1Ch. Ana. Input +/-10V" Desc="EL3001" PortABoxInfo="#x01000003">
 							<SyncMan>001080002600010001000000800080008000001026010000</SyncMan>
 							<SyncMan>801080002200010002000000800080008000801022010000</SyncMan>
 							<SyncMan>001100000400000003000000000000000000001104000000</SyncMan>
@@ -2020,7 +2005,7 @@ Bit1: Value bigger/equal Limit2]]></Comment>
 						<DcMode>4463204f666600000000000000000000534d2d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000</DcMode>
 						<DcMode>467265652052756e0000000000000000467265652052756e206e6f2073796e6368726f6e697a6174696f6e0000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000</DcMode>
 						<MBoxUserCmdData>020005000a0000001f00000003000000000000000000000000000000000000000340010000000000d007436f6e74726f6c20756e6974206379636c652074696d652028744e6379632900</MBoxUserCmdData>
-						<MBoxUserCmdData>020005000a0000002000000003000000000000000000000000000000000000000340020000000000d007436f6d6d756e69636174696f6e206379636c652074696d65202874536379632900</MBoxUserCmdData>
+						<MBoxUserCmdData>020005000a00000020000000030000000000000000000000000000000000000003400200000000001027436f6d6d756e69636174696f6e206379636c652074696d65202874536379632900</MBoxUserCmdData>
 						<Pdo Name="AT" Index="#x0010" Flags="#x0001" SyncMan="3">
 							<Entry Name="Drive status word" Index="#x0087">
 								<Type>UINT</Type>
@@ -2054,7 +2039,7 @@ Bit1: Value bigger/equal Limit2]]></Comment>
 							<PortABoxInfo>#x01000006</PortABoxInfo>
 						</Variant>
 					</ProjectVariant>
-					<EtherCAT SlaveType="2" PdiType="#x0c08" MboxDataLinkLayer="true" StateMBoxPolling="true" CfgModeSafeOp="true" DownloadPdoCfg="true" CycleMBoxPollingTime="0" FoeType="1" SoeChannels="1" VendorId="#x00000002" ProductCode="#x13ed6012" RevisionNo="#x00d70000" InfoDataAddr="true" InfoDataSoeDS401="true" InfoDataDcTimes="true" TimeoutStateChange2="15000" TimeoutStateChange3="10000" TimeoutStateChange4="500" AutoRestoreAfterWcOk="true" CheckRevisionNoType="4" PortPhys="12305" IdentificationAdo="308" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="AX5101-0000-0215 EtherCAT Drive (SoE, 1 Ch.)" Desc="AX5101-0000-0215" PortABoxInfo="#x01000004">
+					<EtherCAT SlaveType="2" PdiType="#x0c08" MboxDataLinkLayer="true" StateMBoxPolling="true" CfgModeSafeOp="true" DownloadPdoCfg="true" CycleMBoxPollingTime="0" FoeType="1" SoeChannels="1" VendorId="#x00000002" ProductCode="#x13ed6012" RevisionNo="#x00d70000" InfoDataAddr="true" InfoDataSoeDS401="true" InfoDataDcTimes="true" TimeoutStateChange2="15000" TimeoutStateChange3="10000" TimeoutStateChange4="500" AutoRestoreAfterWcOk="true" CheckRevisionNoType="4" PortPhys="12305" IdentificationAdo="308" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="AX5101-0000-0215 EtherCAT Drive (SoE, 1 Ch.)" Desc="AX5101-0000-0215" PortABoxInfo="#x01000006">
 						<SyncMan>001880002600010001000000800080008000001826010000</SyncMan>
 						<SyncMan>001a80002200010002000000800080008000001a22010000</SyncMan>
 						<SyncMan>001006002400010003000000000000000000001024010000</SyncMan>
